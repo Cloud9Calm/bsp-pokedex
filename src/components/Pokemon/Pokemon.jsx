@@ -4,7 +4,7 @@ import './Pokemon.scss';
 
 const PokemonList = () => {
   const [pokemonList, setPokemonList] = useState([]);
-  const API_URL = "https://pokeapi.co/api/v2/pokemon/?limit=20"; // Adjust the limit as needed.
+  const API_URL = "https://pokeapi.co/api/v2/pokemon/?limit=151";
 
   const fetchPokemonList = async () => {
     try {
@@ -30,11 +30,11 @@ const PokemonList = () => {
 
   return (
     <section className="pokemon">
-      <h2 className="pokemon__title">Pokémon List</h2>
-      <ul>
+      <h2 className="pokemon__title">151 Pokemon</h2>
+      <ul className="pokemon__main-container">
         {pokemonList.map((pokemon, index) => (
           <li 
-                className="pokemon__pokemon"
+                className="pokemon__container"
                 key={index}>
             <img 
                 className="pokemon__img"
