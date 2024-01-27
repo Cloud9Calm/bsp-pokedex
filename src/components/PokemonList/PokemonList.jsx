@@ -7,7 +7,7 @@ import SearchBar from "../SearchBar/SearchBar";
 const PokemonList = ({ searchQuery, setSearchQuery }) => {
   const [pokemonList, setPokemonList] = useState([]);
   const [filteredPokemonList, setFilteredPokemonList] = useState([]);
-  const API_URL = "https://pokeapi.co/api/v2/pokemon/?limit=1000";
+  const API_URL = "https://pokeapi.co/api/v2/pokemon/?limit=151";
 
   const fetchPokemonList = async () => {
     try {
