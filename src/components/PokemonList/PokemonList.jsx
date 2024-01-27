@@ -6,9 +6,12 @@ import SearchBar from "../SearchBar/SearchBar";
 import { getTypeColorClass } from "../../scripts/pokemonTypes";
 import '../../styles/pokemon/pokemonTypes.scss';
 
+
 const PokemonList = ({ searchQuery, setSearchQuery }) => {
   const [pokemonList, setPokemonList] = useState([]);
   const [filteredPokemonList, setFilteredPokemonList] = useState([]);
+  const [sortMethod, setSortMethod] = useState('index'); // Default sorting by index
+
   const API_URL = "https://pokeapi.co/api/v2/pokemon/?limit=2000";
 
   const fetchPokemonList = async () => {
@@ -39,6 +42,7 @@ const PokemonList = ({ searchQuery, setSearchQuery }) => {
     const filtered = pokemonList.filter(pokemon => pokemon.name.includes(searchQuery.toLowerCase()));
     setFilteredPokemonList(filtered);
   }, [searchQuery, pokemonList]);
+
 
   return (
     <section className="pokemon">
