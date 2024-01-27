@@ -1,0 +1,70 @@
+@import '../../styles/partials/typopgraphy';
+@import '../../styles/partials/mixins';
+@import '../../styles/partials/variables';
+
+.details {
+    font-family: 'pokemon-pixel-font';
+    @include flex-column;
+    align-items: center;
+
+    &__main-container {
+        @include flex-column;
+        align-items: center;
+        background-color: lightgray;
+        border-radius: 5px;
+        border: 1px solid black;
+        box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.3);
+
+    }
+
+
+    &__title {
+        margin: 1rem 0;
+        font-size: .75rem;
+        text-align: center;
+            @include tablet {
+                font-size: 1.75rem;
+            }
+    }
+    &__img {
+        height: 200px;
+            @include tablet {
+                height: 300px;
+            }
+    }
+
+    &__stats {
+        font-size: .75rem;
+            @include tablet {
+                font-size: 1.75rem;
+            }            
+    }
+
+
+    &__containers {
+        @include flex-column;
+        align-items: flex-start;
+        font-size: 1rem;
+        margin: 2rem;
+        padding: 1rem;
+        background-color: white;
+        border: 1px solid black;
+            @include tablet {
+                font-size: 2rem;
+            }
+    }
+
+    &__back-button {
+        color: white;
+        @include list;
+        @include border-background;
+        margin: 1rem 0 4rem 0;
+        padding: 1rem;
+    }
+   
+
+}
+
+ul {
+    @include list;
+}
