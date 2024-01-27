@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
 import './PokemonDetails.scss';
 
@@ -43,39 +43,42 @@ const PokemonDetails = () => {
 
   return (
     <section className='details'>
+        <Link to="/" className='details__back-button'>Back to Homepage</Link>
+
       {pokemonDetails ? (
-        <>
+        <div className='details__main-container'>
           <h2 className='details__title'>Pokemon Details</h2>
           <p>Name: {pokemonDetails.name}</p>
           <img className='details__img' src={pokemonDetails.sprites.front_default} alt={pokemonDetails.name} />
-          <div className='details__container'>
+          <div className='details__abilities-container'>
+            <div className='details__containers'>
             <h3 className='details__title'>Abilities:</h3>
             <ul>
                 {abilities.map((ability) => (
-                <li key={ability.id}>
-                    <p className='details__name'>{ability.name}</p></li>
+                <li className='details__stats' key={ability.id}>{ability.name}</li>
                 ))}
             </ul>
-          </div>
-          <div className='details__container'>
+            </div>
+            <div className='details__containers'>
             <h3 className='details__title'>Types:</h3>
             <ul>
                 {types.map((type) => (
-                <li key={type.id}>{type.name}</li>
+                <li className='details__stats' key={type.id}>{type.name}</li>
                 ))}
             </ul>
-          </div>
-          <div className='details__container'>
-          <h3 className='details__title'>Base Stats:</h3>
+            </div>
+            <div className='details__containers'>
+            <h3 className='details__title'>Base Stats:</h3>
             <ul>
                 {stats.map((stat) => (
-                <li key={stat.stat.name}>
+                <li className='details__stats' key={stat.stat.name}>
                     {stat.stat.name}: {stat.base_stat}
                 </li>
                 ))}
             </ul>
+            </div>
           </div>
-        </>
+        </div>
       ) : (
         <p>Loading...</p>
       )}

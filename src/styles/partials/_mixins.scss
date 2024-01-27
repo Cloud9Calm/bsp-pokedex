@@ -29,3 +29,20 @@
     text-decoration: none;
     cursor: pointer;
 }
+
+@mixin border-background {
+  background-color: rgb(130, 33, 33);
+      border-radius: 5px;
+      box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.4);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+      &:hover {
+        background-color: rgb(150, 33, 33); 
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        transform: scale(1.05); 
+      }
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
