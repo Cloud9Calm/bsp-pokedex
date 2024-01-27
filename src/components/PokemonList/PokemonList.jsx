@@ -38,10 +38,10 @@ const PokemonList = ({ searchQuery, setSearchQuery }) => {
 
   return (
     <section className="pokemon">
-      <h2 className="pokemon__title">151 Pokémon</h2>
+      <h2 className="pokemon__title">Pokémon</h2>
       <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
         <ul className="pokemon__main-container">
-        {filteredPokemonList.map((pokemon, index) => ( // Use filteredPokemonList instead of pokemonList
+        {filteredPokemonList.map((pokemon, index) => ( 
           <li className="pokemon__container" key={index}>
             <Link to={`/pokemon/${pokemon.name}`} className="pokemon__link">
               <img className="pokemon__img" src={pokemon.sprites.front_default} alt={pokemon.name}/>

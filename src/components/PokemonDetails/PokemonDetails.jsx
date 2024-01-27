@@ -10,34 +10,35 @@ const PokemonDetails = () => {
   const [types, setTypes] = useState([]);
   const [stats, setStats] = useState([]);
 
+  const fetchPokemonDetails = async () => {
+    try {
+      const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
+      setPokemonDetails(response.data);
+
+      const abilitiesData = await Promise.all(
+        response.data.abilities.map(async (ability) => {
+          const abilityResponse = await axios.get(ability.ability.url);
+          return abilityResponse.data;
+        })
+      );
+      setAbilities(abilitiesData);
+
+      const typesData = await Promise.all(
+        response.data.types.map(async (type) => {
+          const typeResponse = await axios.get(type.type.url);
+          return typeResponse.data;
+        })
+      );
+      setTypes(typesData);
+
+      setStats(response.data.stats);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+
   useEffect(() => {
-    const fetchPokemonDetails = async () => {
-      try {
-        const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
-        setPokemonDetails(response.data);
-
-        const abilitiesData = await Promise.all(
-          response.data.abilities.map(async (ability) => {
-            const abilityResponse = await axios.get(ability.ability.url);
-            return abilityResponse.data;
-          })
-        );
-        setAbilities(abilitiesData);
-
-        const typesData = await Promise.all(
-          response.data.types.map(async (type) => {
-            const typeResponse = await axios.get(type.type.url);
-            return typeResponse.data;
-          })
-        );
-        setTypes(typesData);
-
-        setStats(response.data.stats);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
     fetchPokemonDetails();
   }, [name]);
 
