@@ -1,0 +1,54 @@
+@import '../../styles/partials/typopgraphy';
+@import '../../styles/partials/mixins';
+@import '../../styles/partials/variables';
+
+
+.pokemon {
+    font-family: 'pokemon-pixel-font';
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    &__main-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        width: 90vw;
+    }
+  
+    &__title {
+      font-size: 2rem;
+      margin: 2rem;
+      text-align: center;
+    }
+  
+    &__container {
+      width: 10rem;
+      margin: 1rem;
+      padding: 1rem;
+      @include border-background;
+    }
+
+    &__link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @include list;
+    }
+  
+    &__img {
+      height: 200px;
+      width: 200px;
+    }
+  
+    &__name {
+      color: white;
+    }
+  }
+
+  .pokemon__container::marker {
+    content: none; 
+  }
+  
+  
