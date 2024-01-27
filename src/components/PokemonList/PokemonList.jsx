@@ -38,9 +38,8 @@ const PokemonList = ({ searchQuery, setSearchQuery }) => {
 
   return (
     <section className="pokemon">
+      <h2 className="pokemon__title">151 Pokémon</h2>
       <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-
-      <h2 className="pokemon__title">151 Pokemon</h2>
         <ul className="pokemon__main-container">
         {filteredPokemonList.map((pokemon, index) => ( // Use filteredPokemonList instead of pokemonList
           <li className="pokemon__container" key={index}>
