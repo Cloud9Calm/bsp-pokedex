@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Link } from 'react-router-dom';
 import axios from "axios";
 import './PokemonList.scss';
+import SearchBar from "../SearchBar/SearchBar";
 
-const PokemonList = () => {
+const PokemonList = ({ searchQuery, setSearchQuery }) => {
   const [pokemonList, setPokemonList] = useState([]);
+  const [filteredPokemonList, setFilteredPokemonList] = useState([]);
   const API_URL = "https://pokeapi.co/api/v2/pokemon/?limit=151";
 
   const fetchPokemonList = async () => {
@@ -29,21 +31,29 @@ const PokemonList = () => {
     fetchPokemonList();
   }, []);
 
+  useEffect(() => {
+    const filtered = pokemonList.filter(pokemon => pokemon.name.includes(searchQuery.toLowerCase()));
+    setFilteredPokemonList(filtered);
+  }, [searchQuery, pokemonList]);
+
   return (
     <section className="pokemon">
+      <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+
       <h2 className="pokemon__title">151 Pokemon</h2>
         <ul className="pokemon__main-container">
-        {pokemonList.map((pokemon, index) => (
-      <li className="pokemon__container" key={index}>
-        <Link to={`/pokemon/${pokemon.name}`} className="pokemon__link">
-          <img className="pokemon__img" src={pokemon.sprites.front_default} alt={pokemon.name}/>
-          <span className="pokemon__name">{pokemon.name}</span>
-        </Link>
-      </li>
-    ))}
-  </ul>
-</section>
+        {filteredPokemonList.map((pokemon, index) => ( // Use filteredPokemonList instead of pokemonList
+          <li className="pokemon__container" key={index}>
+            <Link to={`/pokemon/${pokemon.name}`} className="pokemon__link">
+              <img className="pokemon__img" src={pokemon.sprites.front_default} alt={pokemon.name}/>
+              <span className="pokemon__name">{pokemon.name}</span>
+            </Link>
+          </li>
+        ))}
+        </ul>
+    </section>
   );
 };
 
 export default PokemonList;
+
