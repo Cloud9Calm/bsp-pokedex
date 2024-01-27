@@ -1,15 +1,18 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import '../src/App.scss';
-import Background from './components/Background/Background';
-import Header from './components/Header/Header'
-import Pokemon from './components/Pokemon/Pokemon' 
+import Header from './components/Header/Header';
+import PokemonList from './components/PokemonList/PokemonList';
+import PokemonDetails from './components/PokemonDetails/PokemonDetails'
 
 function App() {
   return (
-    <div className="App">
-      <Background />
+    <BrowserRouter>
       <Header />
-      <Pokemon />
-    </div>
+      <Routes>
+        <Route path="/" element={<PokemonList />} />
+        <Route path="/pokemon/:name" element={<PokemonDetails />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

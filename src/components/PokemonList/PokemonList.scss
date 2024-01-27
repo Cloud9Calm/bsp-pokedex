@@ -2,6 +2,7 @@
 @import '../../styles/partials/mixins';
 @import '../../styles/partials/variables';
 
+
 .pokemon {
     font-family: 'pokemon-pixel-font';
     display: flex;
@@ -23,9 +24,6 @@
     }
   
     &__container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
       width: 10rem;
       margin: 1rem;
       padding: 1rem;
@@ -40,6 +38,13 @@
         transform: scale(1.05); 
       }
     }
+
+    &__link {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @include list;
+    }
   
     &__img {
       height: 200px;
@@ -50,4 +55,9 @@
       color: white;
     }
   }
+
+  .pokemon__container::marker {
+    content: none; 
+  }
+  
   

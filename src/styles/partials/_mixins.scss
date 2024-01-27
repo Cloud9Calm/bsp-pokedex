@@ -23,3 +23,9 @@
   -webkit-text-stroke: 2px $header-font-outline;
   letter-spacing: 1rem;
 }
+
+@mixin list {
+    list-style: none;
+    text-decoration: none;
+    cursor: pointer;
+}
