@@ -17,8 +17,12 @@
 }
 
 input[type='text'] {
-    padding: .5rem 4rem;
+    font-family: 'pokemon-pixel-font';
+    margin: 1rem;
+    padding: 5px;
+    width: 70vw;
+    height: 5vh;
         @include tablet {
-            padding: 1rem 6rem;
+            width: 30vw;
         }
 }
