@@ -12,7 +12,7 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<PokemonList searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>} />
+        <Route path="/bsp-pokedex" element={<PokemonList searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>} />
         <Route path="/pokemon/:name" element={<PokemonDetails />} />
       </Routes>
     </BrowserRouter>

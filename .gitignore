@@ -1,0 +1,33 @@
+# Dependency directories
+node_modules/
+# macOS specific files
+.DS_Store
+# npm-debug.log
+npm-debug.log
+# Yarn integrity file
+.yarn-integrity
+# eslint cache
+.eslintcache
+# Editor directories and files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+# build files
+build/
+dist/
+# Log files
+*.log
+# Cache files
+.cache/
+# Environment files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+# Automatically generated coverage reports
+coverage/
+# .env files should not be checked in to version control.
+.env*

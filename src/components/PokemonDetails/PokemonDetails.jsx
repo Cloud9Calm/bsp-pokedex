@@ -43,7 +43,7 @@ const PokemonDetails = () => {
 
   return (
     <section className='details'>
-        <Link to="/" className='details__back-button'>Back to Homepage</Link>
+        <Link to="/bsp-pokedex" className='details__back-button'>Back to Homepage</Link>
 
       {pokemonDetails ? (
         <div className='details__main-container'>
