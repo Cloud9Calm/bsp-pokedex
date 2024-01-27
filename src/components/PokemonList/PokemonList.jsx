@@ -9,7 +9,7 @@ import '../../styles/pokemon/pokemonTypes.scss';
 const PokemonList = ({ searchQuery, setSearchQuery }) => {
   const [pokemonList, setPokemonList] = useState([]);
   const [filteredPokemonList, setFilteredPokemonList] = useState([]);
-  const API_URL = "https://pokeapi.co/api/v2/pokemon/?limit=1000";
+  const API_URL = "https://pokeapi.co/api/v2/pokemon/?limit=2000";
 
   const fetchPokemonList = async () => {
     try {
