@@ -6,7 +6,7 @@ const Header = () => {
     <header className='header'>
       <nav className='header__nav'>
         <h2 className='header__title'>
-          BSP's Pokémon
+          BSP's Pokédex
         </h2>
         <p className='header__subtitle'>
         Gotta Catch 'Em All!

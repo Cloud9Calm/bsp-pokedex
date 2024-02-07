@@ -1,5 +1,6 @@
 {
   "name": "bsp-pokedex",
+  "homepage": "https://erincronie.github.io/bsp-pokedex/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,9 +16,7 @@
     "react-router-dom": "^6.0.0",
     "react-scripts": "5.0.1",
     "sass": "^1.70.0",
-    "web-vitals": "^2.1.4",
-    "homepage": "https://erincronie.github.io/bsp-pokedex/"
-
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -25,9 +24,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b main -d build",
-    "postdeploy": "rm -rf build"
-  
+    "deploy": "gh-pages -d build" 
   },
   "eslintConfig": {
     "extends": [

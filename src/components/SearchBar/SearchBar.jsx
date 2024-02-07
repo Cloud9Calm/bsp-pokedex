@@ -4,7 +4,7 @@ import './SearchBar.scss';
 const SearchBar = ({ searchQuery, setSearchQuery }) => {
   return (
     <div className='search-bar'>
-      <label className='search-bar__label'>Search Pokémon: </label>
+      <label className='search-bar__label'>Search the Pokédex: </label>
       <input
       className='search-bar__input'
         type='text'
