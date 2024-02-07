@@ -10,9 +10,9 @@ const Background = () => {
       const randomIndex = Math.floor(Math.random() * pokemonImages.length);
       const newImage = pokemonImages[randomIndex];
       setBackgroundImage(newImage);
-    }, 2000); // Change the background every 2 seconds
+    }, 2000); 
 
-    return () => clearInterval(interval); // Clean up the interval on component unmount
+    return () => clearInterval(interval); 
   }, [pokemonImages]);
 
   return (
