@@ -11,15 +11,13 @@
     &__main-container {
         display: flex;
         flex-direction: row;
+        justify-content: space-around;
         flex-wrap: wrap;
-        justify-content: space-evenly;
-        width: 90vw;
           @include tablet {
-            max-height: 45rem;
+            height: 60vh;
             overflow-y: auto;
               @include desktop {
-                max-height: 50rem;
-                overflow-y: auto;
+                height: 70vh;
               }
           }  
     }
@@ -50,16 +48,20 @@
       font-family: 'pokemon-pixel-font';
       display: flex;
       justify-content: center;
-      width: 10rem;
-      margin: 4rem;
-      padding: 2rem 0;
+      width: 35vw;
+      margin: 1rem;
+      padding: 1rem;
       background-color: rgba(0, 0, 0, 0.4);
       border-radius: 5px;
       transition: 0.3s ease; 
         @include tablet {
-          width: 12rem;
-          padding: 1rem;
-          margin: 3rem 5rem;
+          padding: 1rem 2rem;
+          margin: 1rem 2rem;
+            @include desktop {
+              width: 12vw;
+              padding: 3rem;
+              margin: 3rem;
+            }
         } &:hover {
           background-color: rgba(0, 0, 0, 0.9);
           transform: scale(1.05); 
@@ -74,9 +76,12 @@
     }
   
     &__img {
-      height: 18rem;
+      height: 12rem;
         @include tablet {
-          height: 24rem;
+          height: 18rem;
+            @include desktop {
+              height: 24rem;
+            }
         }
     }
   

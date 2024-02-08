@@ -67,7 +67,7 @@
     &__back-button {
         color: white;
         @include list;
-        @include border-background;
+        @include button-background;
         margin: 1rem 0 4rem 0;
         padding: 1rem;
     }
