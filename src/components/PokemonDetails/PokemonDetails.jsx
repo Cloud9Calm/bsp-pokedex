@@ -52,7 +52,7 @@ const PokemonDetails = () => {
       {pokemonDetails ? (
         <div className='details__main-container'>
           <h2 className='details__title'>Pokemon Details</h2>
-          <p className='details__name'>Name: {capitalizeFirstLetter(pokemonDetails.name)}</p>
+          <p className='details__name'>{capitalizeFirstLetter(pokemonDetails.name)}</p>
           <img className='details__img' src={pokemonDetails.sprites.front_default} alt={pokemonDetails.name} />
           <div className='details__abilities-container'>
             <div className='details__containers'>
