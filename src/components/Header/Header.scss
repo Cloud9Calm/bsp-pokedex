@@ -4,7 +4,7 @@
 
 .header {
     background: $main-background-color;
-    padding: 2rem;
+    padding: 1rem;
    
     &__nav {
         @include flex-column;

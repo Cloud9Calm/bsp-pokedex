@@ -66,7 +66,7 @@ const PokemonList = ({ searchQuery, setSearchQuery }) => {
               key={index}
             >
               <Link to={`/pokemon/${pokemon.name}`} className="pokemon__link">
-                <p className="pokemon__order">{pokemon.order}</p>
+                <p className="pokemon__order">{pokemon.id}</p>
                 <span className="pokemon__name">{capitalizeFirstLetter(pokemon.name)}</span>
                 <img
                   className="pokemon__img"
