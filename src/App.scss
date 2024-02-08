@@ -4,11 +4,9 @@
 }
 
 html {
-    background-image: url(./assets/pixel-art-rural-landscape-background/9285000.jpg);
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(./assets/pokemon-pixel-background.png);
     background-position: center;
-    background-repeat: no-repeat;
-    background-size: 120rem;
-    opacity: 90%;
+    background-repeat: repeat;
 }
 
 
