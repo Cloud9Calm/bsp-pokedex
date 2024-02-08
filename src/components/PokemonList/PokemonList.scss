@@ -4,7 +4,6 @@
 
 
 .pokemon {
-    font-family: 'pokemon-pixel-font';
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -16,19 +15,21 @@
         flex-wrap: wrap;
         justify-content: space-evenly;
         width: 90vw;
-        max-height: 35rem;
+        max-height: 40rem;
         overflow-y: auto;
-        
     }
   
     &__title {
-      font-size: 2rem;
-      margin: 2rem 0;
-      text-align: center;
-        @include tablet {
-          font-size: 5rem;
-          margin: 3rem 0;
-        }
+      margin: 1rem;
+      font-family: 'pokemon-main-font';
+        color: $header-font-color;
+        font-size: 3rem;
+        @include mobile-header-text;
+            @include tablet {
+              font-size: 6rem;
+                @include tablet-header-text;
+                justify-content: flex-start;
+            }
     }
 
     &__loading {
@@ -41,40 +42,53 @@
     }
   
     &__container {
+      font-family: 'pokemon-pixel-font';
       display: flex;
       justify-content: center;
-      width: 10rem;
-      margin: 1rem;
-      padding: 1rem 2rem;
-      background-color: rgba(0, 0, 0, 0.7);
+      max-width: 10rem;
+      margin: 4rem;
+      padding: 2rem 0;
+      background-color: rgba(0, 0, 0, 0.4);
       border-radius: 5px;
-       &:hover {
-        background-color: rgba(0, 0, 0, 0.9);
-       }
-
+      transition: 0.3s ease; 
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.9);
+          transform: scale(1.05); 
+        }
+        @include tablet {
+          width: 15rem;
+          padding: 1rem;
+          margin: 3rem 5rem;
+        }
     }
 
     &__link {
-      display: flex;
-      flex-direction: column;
+      @include flex-column;
       align-items: center;
       @include list;
       color: $font-color;
     }
   
     &__img {
-      height: 14rem;
-      width: 14rem;
+      height: 18rem;
+        @include tablet {
+          height: 24rem;
+        }
     }
   
     &__name {
       margin: .5rem;
+      font-size: 1rem;
+        @include tablet {
+          font-size: 1.25rem;
+        }
     }
 
     &__types {
       font-size: 1rem;
       margin: .25rem;
       text-align: center;
+      max-width: 9rem;
     }
 
 

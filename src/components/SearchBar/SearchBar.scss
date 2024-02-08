@@ -11,9 +11,11 @@
             flex-direction: row;
         }
     
-        &__label {
-            font-size: 1rem;
-        }
+    &__label {
+        font-size: 1rem;
+        background-color: rgba(0, 0, 0, 0.7);
+        color: $font-color;
+    }
 }
 
 input[type='text'] {

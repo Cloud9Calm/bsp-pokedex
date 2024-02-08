@@ -13,13 +13,11 @@
 }
 
 @mixin mobile-header-text {
-  font-size: 1rem;
   -webkit-text-stroke: 1px $header-font-outline;
   letter-spacing: .5rem;
 }
 
 @mixin tablet-header-text {
-  font-size: 2rem;
   -webkit-text-stroke: 2px $header-font-outline;
   letter-spacing: 1rem;
 }
