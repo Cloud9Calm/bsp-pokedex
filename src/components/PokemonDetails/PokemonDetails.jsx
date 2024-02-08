@@ -64,14 +64,6 @@ const PokemonDetails = () => {
             </ul>
             </div>
             <div className='details__containers'>
-            <h3 className='details__title'>Types:</h3>
-            <ul>
-                {types.map((type) => (
-                <li className='details__stats' key={type.id}>{type.name}</li>
-                ))}
-            </ul>
-            </div>
-            <div className='details__containers'>
             <h3 className='details__title'>Base Stats:</h3>
             <ul>
                 {stats.map((stat) => (
