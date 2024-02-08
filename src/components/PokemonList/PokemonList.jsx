@@ -9,12 +9,14 @@ import '../../styles/pokemon/pokemonTypes.scss';
 
 const PokemonList = ({ searchQuery, setSearchQuery }) => {
   const [pokemonList, setPokemonList] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   const [filteredPokemonList, setFilteredPokemonList] = useState([]);
-  const [sortMethod, setSortMethod] = useState('index'); // Default sorting by index
+  const [sortMethod, setSortMethod] = useState('index'); 
 
-  const API_URL = "https://pokeapi.co/api/v2/pokemon/?limit=2000";
+  const API_URL = "https://pokeapi.co/api/v2/pokemon/?limit=151";
 
   const fetchPokemonList = async () => {
+    setIsLoading(true); 
     try {
       const response = await axios.get(API_URL);
       const data = response.data.results;
@@ -30,8 +32,11 @@ const PokemonList = ({ searchQuery, setSearchQuery }) => {
       setPokemonList(pokemonWithImagesAndTypes);
     } catch (error) {
       console.error(error);
+    } finally {
+      setIsLoading(false);
     }
   };
+  
   
 
   useEffect(() => {
@@ -46,32 +51,40 @@ const PokemonList = ({ searchQuery, setSearchQuery }) => {
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
   }
-  
-
 
   return (
     <section className="pokemon">
-            <h2 className="pokemon__title">Pokémon</h2>
-            <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
-            <ul className="pokemon__main-container">
-        {filteredPokemonList.map((pokemon, index) => (
-          <li
-            className={`pokemon__container ${getTypeColorClass(pokemon.types)}`}
-            key={index}
-          >
-            <Link to={`/pokemon/${pokemon.name}`} className="pokemon__link">
-              <img
-                className="pokemon__img"
-                src={pokemon.sprites.front_default}
-                alt={pokemon.name}
-              />
-              <span className="pokemon__name">{capitalizeFirstLetter(pokemon.name)}</span>
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <h2 className="pokemon__title">Pokémon</h2>
+      <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+      {isLoading ? (
+        <div className="pokemon__loading">Loading...</div> // Customize this as needed
+      ) : (
+        <ul className="pokemon__main-container">
+          {filteredPokemonList.map((pokemon, index) => (
+            <li
+              className={`pokemon__container ${getTypeColorClass(pokemon.types)}`}
+              key={index}
+            >
+              <Link to={`/pokemon/${pokemon.name}`} className="pokemon__link">
+                <p className="pokemon__order">{pokemon.order}</p>
+                <span className="pokemon__name">{capitalizeFirstLetter(pokemon.name)}</span>
+                <img
+                  className="pokemon__img"
+                  src={pokemon.sprites.front_default}
+                  alt={pokemon.name}
+                />
+                <p className="pokemon__types">
+                  {Array.isArray(pokemon.types) ? pokemon.types.join(' & ') : pokemon.types}
+                </p>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
     </section>
   );
+  
+
 };
 
 export default PokemonList;
