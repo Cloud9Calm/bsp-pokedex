@@ -43,6 +43,11 @@ const PokemonList = ({ searchQuery, setSearchQuery }) => {
     setFilteredPokemonList(filtered);
   }, [searchQuery, pokemonList]);
 
+  const capitalizeFirstLetter = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+  }
+  
+
 
   return (
     <section className="pokemon">
@@ -60,7 +65,7 @@ const PokemonList = ({ searchQuery, setSearchQuery }) => {
                 src={pokemon.sprites.front_default}
                 alt={pokemon.name}
               />
-              <span className="pokemon__name">{pokemon.name}</span>
+              <span className="pokemon__name">{capitalizeFirstLetter(pokemon.name)}</span>
             </Link>
           </li>
         ))}

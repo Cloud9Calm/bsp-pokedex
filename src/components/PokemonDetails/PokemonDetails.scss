@@ -4,6 +4,7 @@
 
 .details {
     font-family: 'pokemon-pixel-font';
+    color: $font-color;
     @include flex-column;
     align-items: center;
 
@@ -12,15 +13,22 @@
         align-items: center;
         border-radius: 2px;
         box-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.3);
-
+        background-color: rgba(0, 0, 0, 0.7);
     }
 
     &__title {
         margin: 1rem 0;
-        font-size: .75rem;
+        font-size: .5rem;
         text-align: center;
             @include tablet {
-                font-size: 1.75rem;
+                font-size: 1rem;
+            }
+    }
+
+    &__name {
+        font-size: 1rem;
+            @include tablet {
+                font-size: 2rem;
             }
     }
 
@@ -44,8 +52,8 @@
         font-size: 1rem;
         margin: 2rem;
         padding: 1rem;
-        background-color: white;
-        border: 1px solid black;
+        border: 5px solid black;
+        border-radius: 5px;
             @include tablet {
                 font-size: 2rem;
             }
