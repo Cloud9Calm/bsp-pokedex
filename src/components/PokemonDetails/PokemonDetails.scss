@@ -16,7 +16,7 @@
     }
 
     &__title {
-        margin: 1rem 0;
+        margin: 1rem;
         font-size: .5rem;
         text-align: center;
             @include tablet {
@@ -33,12 +33,12 @@
     }
 
     &__img {
-        height: 200px;
+        height: 14rem;
         background-color: rgba(255, 255, 255, 0.7);
         border-radius: 50%;
         margin: 1rem;
             @include tablet {
-                height: 300px;
+                height: 20rem;
             }
     }
 
