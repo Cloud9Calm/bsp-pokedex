@@ -13,7 +13,7 @@ const PokemonList = ({ searchQuery, setSearchQuery }) => {
   const [filteredPokemonList, setFilteredPokemonList] = useState([]);
   const [sortMethod, setSortMethod] = useState('index'); 
 
-  const API_URL = "https://pokeapi.co/api/v2/pokemon/?limit=151";
+  const API_URL = "https://pokeapi.co/api/v2/pokemon/?limit=2000";
 
   const fetchPokemonList = async () => {
     setIsLoading(true); 
@@ -37,8 +37,6 @@ const PokemonList = ({ searchQuery, setSearchQuery }) => {
     }
   };
   
-  
-
   useEffect(() => {
     fetchPokemonList();
   }, []);
@@ -57,7 +55,7 @@ const PokemonList = ({ searchQuery, setSearchQuery }) => {
       <h2 className="pokemon__title">Pokémon</h2>
       <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       {isLoading ? (
-        <div className="pokemon__loading">Loading...</div> // Customize this as needed
+        <div className="pokemon__loading">Loading...</div> 
       ) : (
         <ul className="pokemon__main-container">
           {filteredPokemonList.map((pokemon, index) => (
