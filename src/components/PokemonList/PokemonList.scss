@@ -7,7 +7,6 @@
     @include flex-column;
     align-items: center;
  
-    
     &__main-container {
         display: flex;
         flex-direction: row;
@@ -16,16 +15,17 @@
         margin: 1rem;
         overflow-y: auto;
         max-height: 75vh;
+        @include remove-default-scrollbar;
     }
   
     &__title {
       font-family: 'pokemon-main-font';
       color: $header-font-color;
-      font-size: 3rem;
-      margin: 1rem;
+      font-size: 2rem;
       @include mobile-header-text;
           @include tablet {
             font-size: 6rem;
+            margin: 1rem;
             @include tablet-header-text;
             justify-content: flex-start;
           }
@@ -48,15 +48,15 @@
       background-color: rgba(0, 0, 0, 0.4);
       border-radius: 5px;
       transition: 0.3s ease;
-      width: 35vw;
-      margin: 1rem;
+      width: 10rem;
+      height: 15rem;
+      margin: 1rem 0;
       padding: 1rem;
         @include tablet {
-          padding: 1rem 2rem;
-          margin: 1rem 2rem;
-            @include desktop {
-              width: 12vw;
-              padding: 3rem;
+            width: 15rem;
+            height: 20rem;
+            margin: 1rem 2rem;
+            @include desktop { 
               margin: 3rem;
             }
         } &:hover {
@@ -73,11 +73,11 @@
     }
   
     &__img {
-      height: 12rem;
+      height: 10rem;
         @include tablet {
           height: 18rem;
             @include desktop {
-              height: 24rem;
+              height: 25rem;
             }
         }
     }
