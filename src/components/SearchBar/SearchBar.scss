@@ -5,7 +5,6 @@
 
 .search-bar {
     font-family: 'pokemon-pixel-font';
-    margin: 1rem;
     @include flex-column;
     align-items: center;
         @include tablet {
@@ -32,7 +31,7 @@ input[type='text'] {
     font-family: 'pokemon-pixel-font';
     font-size: 1rem;
     width: 50vw;
-    height: 3vh;
+    height: 6vh;
         @include tablet {
             font-size: 2rem;
             width: 30vw;

@@ -19,19 +19,6 @@
         max-width: 90vw;
         @include remove-default-scrollbar;
     }
-  
-    &__title {
-      font-family: 'pokemon-main-font';
-      color: $header-font-color;
-      font-size: 2rem;
-      @include mobile-header-text;
-          @include tablet {
-            font-size: 6rem;
-            margin: 1rem;
-            @include tablet-header-text;
-            justify-content: flex-start;
-          }
-    }
 
     &__loading {
       font-family: 'pokemon-pixel-font';

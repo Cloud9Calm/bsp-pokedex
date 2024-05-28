@@ -52,7 +52,6 @@ const PokemonList = ({ searchQuery, setSearchQuery }) => {
 
   return (
     <section className="pokemon">
-      <h2 className="pokemon__title">Pokémon</h2>
       <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       {isLoading ? (
         <div className="pokemon__loading">Loading...</div> 
