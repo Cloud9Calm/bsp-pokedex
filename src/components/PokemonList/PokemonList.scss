@@ -15,6 +15,7 @@
         margin: 1rem;
         overflow-y: auto;
         max-height: 75vh;
+        width: 90%;
         @include remove-default-scrollbar;
     }
   
