@@ -15,7 +15,7 @@
         margin: 1rem;
         overflow-y: scroll;
         overflow-x: hidden;
-        max-height: 75vh;
+        max-height: 85vh;
         max-width: 90vw;
         @include remove-default-scrollbar;
     }
@@ -44,10 +44,6 @@
         @include tablet {
             width: 15rem;
             height: 20rem;
-            margin: 1rem 2rem;
-            @include desktop { 
-              margin: 3rem;
-            }
         } &:hover {
           background-color: rgba(0, 0, 0, 0.9);
           transform: scale(1.05); 
